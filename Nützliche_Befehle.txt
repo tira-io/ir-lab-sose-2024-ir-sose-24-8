@@ -1,0 +1,68 @@
+# Zeigt alle Klassen des Datasets an
+    pt_dataset = pt.get_dataset('irds:ir-lab-sose-2024/ir-acl-anthology-20240504-training')
+
+    print("Verfügbare Methoden und Eigenschaften des Datasets:")
+    print(dir(pt_dataset))
+#   '__class__',
+    '__delattr__',
+    '__dict__',
+    '__dir__', 
+    '__doc__', 
+    '__eq__',
+    '__format__',
+    '__ge__',
+    '__getattribute__',
+    '__gt__',
+    '__hash__',
+    '__init__',
+    '__init_subclass__',
+    '__le__',
+    '__lt__',
+    '__module__',
+    '__ne__',
+    '__new__',
+    '__reduce__',
+    '__reduce_ex__',
+    '__repr__',
+    '__setattr__',
+    '__sizeof__',
+    '__str__',
+    '__subclasshook__',
+    '__weakref__',
+    '_configure',
+    '_describe_component',
+    '_irds_id',
+    '_irds_ref', 
+    'get_corpus', 
+    'get_corpus_iter',
+    'get_corpus_lang',
+    'get_index',
+    'get_qrels', 
+    'get_results',
+    'get_topics',
+    'get_topics_lang',
+    'get_topicsqrels',
+    'info_url',
+    'irds_ref'    
+
+#Suchen
+bm25.search('pagerank')
+
+# #Benötigt um Permission error beim entpacken zu umgehen
+# import os
+# import shutil
+
+# source = "/root/.tira/extracted_datasets/ir-lab-sose-2024/ir-acl-anthology-20240504-training/ir-acl-anthology-20240504-training"
+# destination = "/root/.tira/extracted_datasets/ir-lab-sose-2024/ir-acl-anthology-20240504-training/input-data"
+
+# try:
+#     os.rename(source, destination)
+# except PermissionError as e:
+#     print(f"PermissionError encountered: {e}. Trying to copy instead.")
+#     shutil.copytree(source, destination)
+#     shutil.rmtree(source)
+
+pt_dataset.get_corpus_iter()
+pt_dataset.get_corpus()
+pt_dataset.get_topics()
+pt_dataset.get_qrels()
